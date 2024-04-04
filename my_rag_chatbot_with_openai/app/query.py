@@ -17,7 +17,7 @@ def clear_terminal():
 
 SYSTEM_PROMPT = ("You are a helpful AI assistant. You have to use the provided extracted text chunks in triple "
                  "backticks and answer the user query/question provided in single backticks. If the answer is not "
-                 "available in the extracted text you don't answer it. Please answer in Korean")
+                 "available in the extracted text you don't answer it. Please translate it into Korean.")
 
 
 class ChatPDF:

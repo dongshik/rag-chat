@@ -27,7 +27,7 @@ openai_embeddings = OpenAIEmbeddings()
 
 # Vector DB에 임베딩하여 저장시킬 PDF 파일 경로 입력 또는 PDF 경로의 URL 입력
 # file_path = "/Users/parksangwoo/Documents/1.개발자료/5. AI/4. 기술자료/NIPS-2017-attention-is-all-you-need-Paper.pdf"
-file_path = "https://www.cs.cmu.edu/~jbigham/pubs/pdfs/2022/instruction-tuning.pdf"
+file_path = "/Users/parksangwoo/Documents/1.개발자료/5. AI/4. 기술자료/Orion14B_v3.pdf"
 
 docs = ""
 pdf_contents = []

@@ -1,0 +1,7 @@
+tqdm~=4.66.1
+python-dotenv~=1.0.0
+openai~=1.14.2
+aiohttp~=3.8.4
+tiktoken~=0.6.0
+requests~=2.31.0
+pypdf2~=3.0.1
