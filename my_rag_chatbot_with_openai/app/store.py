@@ -1,4 +1,4 @@
-import os
+import os, sys
 import pickle
 from glob import glob
 
@@ -6,6 +6,8 @@ import pinecone
 from dotenv import load_dotenv
 from tqdm.auto import tqdm
 
+# 상위 디렉토리의 db,pdf,qa 폴더 참조하기위해서
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from db.save_embeddings import PineconeDB
 from pdf.read_pdf import get_pdf_content
 from qa.generate_embeddings import OpenAIEmbeddings
@@ -27,12 +29,15 @@ openai_embeddings = OpenAIEmbeddings()
 
 # Vector DB에 임베딩하여 저장시킬 PDF 파일 경로 입력 또는 PDF 경로의 URL 입력
 # file_path = "/Users/parksangwoo/Documents/1.개발자료/5. AI/4. 기술자료/NIPS-2017-attention-is-all-you-need-Paper.pdf"
-file_path = "/Users/parksangwoo/Documents/1.개발자료/5. AI/4. 기술자료/Orion14B_v3.pdf"
+file_path = "../docs/Orion14B_v3.pdf"
+
+# 현재 디렉토리 확인
+print(os.getcwd())
 
 docs = ""
 pdf_contents = []
 
-if file_path.startswith("/"):
+if file_path.startswith("/") | file_path.startswith("../"):
     docs = glob(file_path)
     for _, pdf in enumerate(tqdm(docs, desc="Getting PDFs")):
         pdf_contents.append(get_pdf_content(pdf))
